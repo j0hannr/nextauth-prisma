@@ -1,3 +1,51 @@
+## Testing NextAuth with Prisma Adapter
+
+Dependencies
+- Postgres package
+
+| Test  | Status | NextAuth | Adapter | Database       | Error     |
+| ----- | ------ | -------- | ------- | -------------- | --------- |
+| local | 👍      | 3.29.0   | TypeORM | local/postgres |
+| local | ❌      | 3.29.0   | TypeORM | heroku         | `SSL off` |
+| local | ❌      | 3.29.0   | TypeORM | digitalocean   | `SSL off` |
+| local | 👍      | 3.29.0   | Prisma  | digital ocean  |           |
+
+
+### NextAuth V3
+```bash
+npm i
+npm install pg --save
+npm install @prisma/client @next-auth/prisma-adapter@canary
+npm install prisma --save-dev
+```
+- [ ] Works Locally
+- [ ] Does not work on Vercel
+- [ ] Witout Prisma Adapter
+- [ ] With Prisma Adapter
+
+### NextAuth V4
+- [ ] Locally
+- [ ] on Vercel
+- [ ] Witout Prisma Adapter
+- [ ] With Prisma Adapter
+
+### Credentials Used
+`.env`
+```bash
+DATABASE_URL="sdds"
+# ...
+EMAIL_SERVER=smtp://...
+EMAIL_FROM=NextAuth <...@...>
+NEXTAUTH_URL=http://localhost:3000
+SECRET=INp8IvdIyeMcoGAgFGoA61DdBglwwSqnXJZkgz8PSnw
+```
+
+### Database Schemas
+- [V3 Postgres](https://next-auth.js.org/v3/adapters/typeorm/postgres)
+
+#### V3 Prisma
+
+
 <p align="center">
    <br/>
    <a href="https://next-auth.js.org" target="_blank"><img width="150px" src="https://next-auth.js.org/img/logo/logo-sm.png" /></a>
