@@ -3,12 +3,14 @@
 Dependencies
 - Postgres package
 
-| Test  | Status | NextAuth | Adapter | Database       | Error     |
-| ----- | ------ | -------- | ------- | -------------- | --------- |
-| local | 👍      | 3.29.0   | TypeORM | local/postgres |
-| local | ❌      | 3.29.0   | TypeORM | heroku         | `SSL off` |
-| local | ❌      | 3.29.0   | TypeORM | digitalocean   | `SSL off` |
-| local | 👍      | 3.29.0   | Prisma  | digital ocean  |           |
+| Test   | Status | NextAuth | Adapter | Database                | Error                  |
+| ------ | ------ | -------- | ------- | ----------------------- | ---------------------- |
+| local  | 👍      | 3.29.0   | TypeORM | local/postgres          |
+| local  | ❌      | 3.29.0   | TypeORM | heroku                  | `SSL off`              |
+| local  | ❌      | 3.29.0   | TypeORM | digitalocean            | `SSL off`              |
+| local  | 👍      | 3.29.0   | Prisma  | digital ocean           |                        |
+| Vercel | ❌      | 3.29.0   | Prisma  | digital ocean           | `504: GATEWAY_TIMEOUT` |
+| Vercel | ❌      | 3.29.0   | Prisma  | digital ocean (pooling) | `504: GATEWAY_TIMEOUT` |
 
 
 ### NextAuth V3
