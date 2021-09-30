@@ -6,10 +6,14 @@ import GithubProvider from "next-auth/providers/github"
 import TwitterProvider from "next-auth/providers/twitter"
 import Auth0Provider from "next-auth/providers/auth0"
 // import AppleProvider from "next-auth/providers/apple"
+import { PrismaAdapter } from "@next-auth/prisma-adapter"
+import { PrismaClient } from "@prisma/client"
+const prisma = new PrismaClient()
 
 // For more information on each option (and a full list of options) go to
 // https://next-auth.js.org/configuration/options
 export default NextAuth({
+  adapter: PrismaAdapter(prisma),
   // https://next-auth.js.org/configuration/providers
   providers: [
     EmailProvider({
@@ -59,7 +63,7 @@ export default NextAuth({
   // Notes:
   // * You must install an appropriate node_module for your database
   // * The Email provider requires a database (OAuth providers do not)
-  database: process.env.DATABASE_URL,
+  // database: process.env.DATABASE_URL,
 
   // The secret should be set to a reasonably long random string.
   // It is used to sign cookies and to sign and encrypt JSON Web Tokens, unless
