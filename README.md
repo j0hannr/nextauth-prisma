@@ -11,7 +11,13 @@ Dependencies
 | local  | 👍      | 3.29.0       | Prisma  | digital ocean           |                        |
 | Vercel | ❌      | 3.29.0       | Prisma  | digital ocean           | `504: GATEWAY_TIMEOUT` |
 | Vercel | ❌      | 3.29.0       | Prisma  | digital ocean (pooling) | `504: GATEWAY_TIMEOUT` |
-| local  | 👍      | 4.0.0.beta.2 | Prisma  | digital ocean (pooling) | Internal Server Error  |
+| local  | 👍      | 4.0.0.beta.2 | Prisma  | digital ocean (pooling) |                        |
+| local  | ❌      | 4.0.0.beta.2 | Prisma  | digital ocean (pooling) | Internal Server Error  |
+
+```log
+[POST] /api/auth/signin/email
+19:13:39:27 2021-09-30T17:13:49.345Z 479a92b8-146b-48ee-ba66-8f3cd1262025 Task timed out after 10.01 seconds
+```
 
 
 ### NextAuth V3
