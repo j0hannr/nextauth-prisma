@@ -71,7 +71,7 @@ export default NextAuth({
     database: process.env.DATABASE,
     ssl: {
       rejectUnauthorized: false,
-      ca: fs.readFileSync("./ca-certificate.crt").toString(),
+      ca: fs.readFileSync("./prisma/ca-certificate.crt").toString(),
       // ca: fs.readFile("./ca-certificate.crt").toString(),
     }
     // synchronize: true
