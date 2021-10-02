@@ -9,7 +9,35 @@ import fs from "fs"
 // const prisma = new PrismaClient()
 const { readFileSync } = require('fs');
 const { join } = require('path');
-const file = readFileSync(join(__dirname, '../../../../../', 'ca-certificate.crt'), 'utf8');
+// const file = readFileSync(join(__dirname, '../../../../../', 'ca-certificate.crt'), 'utf8');
+// let file = readFileSync(join(__dirname, '../../../../../', 'ca-certificate.crt'), 'utf8');
+let file = `-----BEGIN CERTIFICATE-----
+MIIEQTCCAqmgAwIBAgIUYi+RplrJ9AyAaezSApkuKKjoucQwDQYJKoZIhvcNAQEM
+BQAwOjE4MDYGA1UEAwwvYjAyMmI2N2ItZTFlZi00YjQwLWE4NjUtMzY0OTAzZTBk
+MTAwIFByb2plY3QgQ0EwHhcNMjEwNzI4MTEyMTI0WhcNMzEwNzI2MTEyMTI0WjA6
+MTgwNgYDVQQDDC9iMDIyYjY3Yi1lMWVmLTRiNDAtYTg2NS0zNjQ5MDNlMGQxMDAg
+UHJvamVjdCBDQTCCAaIwDQYJKoZIhvcNAQEBBQADggGPADCCAYoCggGBAMYTbSXq
+rGzzvslOOJAFI8NJQzq19c3/OBLbEIFjsz/nVeKQM4SBjY7U7htlo3DgE604//YX
+UzQ8kJY6Wemkd3jme/F1nF2P/1JqP93Vt8HEMs1P2NI8FimzeD0IblqOiQnkM7Hk
+AzvZzch0CmaLE9GH/yuZikHrKh2aPC5aVHhMWQwfH4/smv6Z0HoFvCUo4GX57Df8
+iPdl87urao2PeHE7Nww3Fl1lJJMDHWdRrH4nhy0YzJMV9lotxeobQ5YI7lxe9tvQ
+3gUUhHo+ZKQWvpoBmVXzZF3WZ+ic5Ts3bf0RK9ESCDcWwIJJ3sWqt2NeQiO3gidU
+NVuVfUD/eSL910zWhHHrIfRUalv3Lds1ETTPlWYENdpkLqQYVyi69KHR557BK+nu
+5OmBn3JH0bFfvoSOS52rR0j6Sbgs706oDqkzqX5bPjeZmrJ5nRNfV0ZdfbaX+yKv
+ayRcvwpAquQ/Bn5FyItFQJg6rVaRal2elhIofk5Sr0acISRgXH1cL2JFPQIDAQAB
+oz8wPTAdBgNVHQ4EFgQUtfOEcg8gZfuYRFBmFz46HdNzPyMwDwYDVR0TBAgwBgEB
+/wIBADALBgNVHQ8EBAMCAQYwDQYJKoZIhvcNAQEMBQADggGBABVOp+lwzbto649T
+vAFGnU2OOa8gGAvUxw8sxZ+GTuaMHytcAKidCcsKfXizCdhbBXhAL8tHwPYDkv4M
+KFqSN+5wrsyPYS1KD05sepR5YfaJt0d4BLYHfbilAIVjxntVha2Z4OMHSwZ8Fppn
+hq2qetkR9ifPlbd+007seCZZi1aO9mIUQo8gtsmNICAD2vpYPSwAv3enr9BNDDFj
+7f6zLZggvyoYLiFlMwtQSs4JjTT6fPuALaV0ZNPg0csyEgGQYbm3M3EhnWpHzx++
+4BRivgTrwgi9FnKuXRBk++kFOkiL1YOC2h70VEztwgt8RSMHVk5G2BtVHwG0KmAi
+cJOB7Qhohe3b1cyQS3h9smG1PHIfkXxQ55OR99MYLS7zykPyOkpKr7KdDwgOpgYZ
+rjssulNK+8YMykmV6fGkevv+zOZv0dRDyQY9X0t7Nkoolu+OIkO8gOkypCbPemiY
+O0Ee+fz7/S2VMWSy5QS395NcW8yirJpbb2MfwFeIDb8dNVdq0A==
+-----END CERTIFICATE-----`
+console.log(file)
+// const file = readFileSync(join(__dirname, 'ca-certificate.crt'), 'utf8');
 // https://vercel.com/docs/runtimes#advanced-usage/technical-details/including-additional-files
 
 // For more information on each option (and a full list of options) go to
