@@ -4,6 +4,7 @@ import Providers from "next-auth/providers"
 // import { PrismaClient } from "@prisma/client"
 // import fs from "next-auth/fs"
 import fs from "fs"
+// import ca from "../../../ca-certificate.crt"
 
 // const prisma = new PrismaClient()
 
@@ -70,7 +71,7 @@ export default NextAuth({
     database: process.env.DATABASE,
     ssl: {
       rejectUnauthorized: false,
-      ca: fs.readFileSync("./ca-certificate.crt").toString(),
+      ca: fs.readFileSync("../../../ca-certificate.crt").toString(),
     }
     // synchronize: true
   },
