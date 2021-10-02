@@ -7,6 +7,10 @@ import fs from "fs"
 // import ca from "../../../ca-certificate.crt"
 
 // const prisma = new PrismaClient()
+const { readFileSync } = require('fs');
+const { join } = require('path');
+const file = readFileSync(join(__dirname, '../../../../../', 'ca-certificate.crt'), 'utf8');
+// https://vercel.com/docs/runtimes#advanced-usage/technical-details/including-additional-files
 
 // For more information on each option (and a full list of options) go to
 // https://next-auth.js.org/configuration/options
@@ -71,7 +75,8 @@ export default NextAuth({
     database: process.env.DATABASE,
     ssl: {
       rejectUnauthorized: false,
-      ca: fs.readFileSync("./prisma/ca-certificate.crt").toString(),
+      // ca: fs.readFileSync("./prisma/ca-certificate.crt").toString(),
+      ca: file.toString(),
       // ca: fs.readFile("./ca-certificate.crt").toString(),
     }
     // synchronize: true
