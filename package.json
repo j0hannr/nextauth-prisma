@@ -12,8 +12,7 @@
   "scripts": {
     "dev": "next",
     "build": "next build",
-    "start": "next start",
-    "vercel-build": "prisma generate && prisma migrate deploy && next build"
+    "start": "next start"
   },
   "author": "Iain Collins <me@iaincollins.com>",
   "contributors": [
