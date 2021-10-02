@@ -72,6 +72,7 @@ export default NextAuth({
     ssl: {
       rejectUnauthorized: false,
       ca: fs.readFileSync("./ca-certificate.crt").toString(),
+      // ca: fs.readFile("./ca-certificate.crt").toString(),
     }
     // synchronize: true
   },
