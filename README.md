@@ -45,7 +45,7 @@ npm install prisma --save-dev
 ### Credentials Used
 `.env`
 ```bash
-DATABASE_URL="sdds"
+DATABASE_URL="..."
 # ...
 EMAIL_SERVER=smtp://...
 EMAIL_FROM=NextAuth <...@...>
