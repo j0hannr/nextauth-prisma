@@ -12,8 +12,12 @@ Dependencies
 | Vercel | ❌      | 3.29.0       | Prisma@canary | digital ocean           | `504: GATEWAY_TIMEOUT` |
 | Vercel | ❌      | 3.29.0       | Prisma@canary | digital ocean (pooling) | `504: GATEWAY_TIMEOUT` |
 | local  | 👍      | 4.0.0.beta.2 | Prisma@next   | digital ocean (pooling) |                        |
-| local  | ❌      | 4.0.0-beta.2 | Prisma@next   | digital ocean (pooling) | Internal Server Error  |
+| Vercel | ❌      | 4.0.0-beta.2 | Prisma@next   | digital ocean (pooling) | Internal Server Error  |
 
+- possible alternative Database with Prisma and connection through TypeORM ❌ 
+- Up-downgrade Prisma
+
+**Log of Vercel Serveless function**
 ```log
 [POST] /api/auth/signin/email
 19:13:39:27 2021-09-30T17:13:49.345Z 479a92b8-146b-48ee-ba66-8f3cd1262025 Task timed out after 10.01 seconds
