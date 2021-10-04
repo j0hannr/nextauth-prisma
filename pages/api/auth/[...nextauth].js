@@ -1,12 +1,15 @@
 import NextAuth from "next-auth"
 import Providers from "next-auth/providers"
 // import { PrismaAdapter } from "@next-auth/prisma-adapter"
-// import { PrismaClient } from "@prisma/client"
+import Adapters from "next-auth/adapters"
+import { PrismaClient } from "@prisma/client"
 // import fs from "next-auth/fs"
 import fs from "fs"
 // import ca from "../../../ca-certificate.crt"
 
-// const prisma = new PrismaClient()
+const prisma = new PrismaClient()
+
+
 const { readFileSync } = require('fs');
 const { join } = require('path');
 // const file = readFileSync(join(__dirname, '../../../../../', 'ca-certificate.crt'), 'utf8');
@@ -94,21 +97,24 @@ export default NextAuth({
   // * You must install an appropriate node_module for your database
   // * The Email provider requires a database (OAuth providers do not)
   // database: process.env.DATABASE_URL,
-  database: { 
-    type: 'postgres',
-    host: process.env.HOST,
-    port: process.env.PORT,
-    username: process.env.USERNAME,
-    password: process.env.PASSWORD,
-    database: process.env.DATABASE,
-    ssl: {
-      rejectUnauthorized: false,
-      // ca: fs.readFileSync("./prisma/ca-certificate.crt").toString(),
-      ca: file.toString(),
-      // ca: fs.readFile("./ca-certificate.crt").toString(),
-    }
-    // synchronize: true
-  },
+
+  adapter: Adapters.Prisma.Adapter({ prisma }),
+
+  // database: { 
+  //   type: 'postgres',
+  //   host: process.env.HOST,
+  //   port: process.env.PORT,
+  //   username: process.env.USERNAME,
+  //   password: process.env.PASSWORD,
+  //   database: process.env.DATABASE,
+  //   ssl: {
+  //     rejectUnauthorized: false,
+  //     // ca: fs.readFileSync("./prisma/ca-certificate.crt").toString(),
+  //     ca: file.toString(),
+  //     // ca: fs.readFile("./ca-certificate.crt").toString(),
+  //   }
+  //   // synchronize: true
+  // },
 
   // The secret should be set to a reasonably long random string.
   // It is used to sign cookies and to sign and encrypt JSON Web Tokens, unless

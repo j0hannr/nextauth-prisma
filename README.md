@@ -13,9 +13,16 @@ Dependencies
 | Vercel | ❌      | 3.29.0       | Prisma@canary | digital ocean (pooling) | `504: GATEWAY_TIMEOUT` |
 | local  | 👍      | 4.0.0.beta.2 | Prisma@next   | digital ocean (pooling) |                        |
 | Vercel | ❌      | 4.0.0-beta.2 | Prisma@next   | digital ocean (pooling) | Internal Server Error  |
+| local  | 👍      | 3.29.0       | TypeORM       | digitalocean            |                        |
+| Vercel | ❌      | 3.29.0       | TypeORM       | digitalocean            | Internal Server Error  |
+
 
 - possible alternative Database with Prisma and connection through TypeORM ❌ 
 - Up-downgrade Prisma
+- Prisma Legacy adapter
+- v4 Email proper code `EmailProvider` https://next-auth.js.org/configuration/providers/email-provider (check branch...)
+- v4 with typeORM 
+
 
 **Log of Vercel Serveless function**
 ```log
