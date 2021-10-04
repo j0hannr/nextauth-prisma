@@ -3,25 +3,19 @@
 Dependencies
 - Postgres package
 
-| Test   | Status | NextAuth     | Adapter       | Database                | Error                  |
-| ------ | ------ | ------------ | ------------- | ----------------------- | ---------------------- |
-| local  | 👍      | 3.29.0       | TypeORM       | local/postgres          |
-| local  | ❌      | 3.29.0       | TypeORM       | heroku                  | `SSL off`              |
-| local  | ❌      | 3.29.0       | TypeORM       | digitalocean            | `SSL off`              |
-| local  | 👍      | 3.29.0       | Prisma@canary | digital ocean           |                        |
-| Vercel | ❌      | 3.29.0       | Prisma@canary | digital ocean           | `504: GATEWAY_TIMEOUT` |
-| Vercel | ❌      | 3.29.0       | Prisma@canary | digital ocean (pooling) | `504: GATEWAY_TIMEOUT` |
-| local  | 👍      | 4.0.0.beta.2 | Prisma@next   | digital ocean (pooling) |                        |
-| Vercel | ❌      | 4.0.0-beta.2 | Prisma@next   | digital ocean (pooling) | Internal Server Error  |
-
-- possible alternative Database with Prisma and connection through TypeORM ❌ 
-- Up-downgrade Prisma
-
-**Log of Vercel Serveless function**
-```log
-[POST] /api/auth/signin/email
-19:13:39:27 2021-09-30T17:13:49.345Z 479a92b8-146b-48ee-ba66-8f3cd1262025 Task timed out after 10.01 seconds
-```
+| Test          | Status | NextAuth     | Adapter       | Database                | Error                  |
+| ------------- | ------ | ------------ | ------------- | ----------------------- | ---------------------- |
+| local         | 👍      | 3.29.0       | TypeORM       | local/postgres          |
+| local         | ❌      | 3.29.0       | TypeORM       | heroku                  | `SSL off`              |
+| local         | ❌      | 3.29.0       | TypeORM       | digitalocean            | `SSL off`              |
+| local         | 👍      | 3.29.0       | Prisma@canary | digital ocean           |                        |
+| Vercel        | ❌      | 3.29.0       | Prisma@canary | digital ocean           | `504: GATEWAY_TIMEOUT` |
+| Vercel        | ❌      | 3.29.0       | Prisma@canary | digital ocean (pooling) | `504: GATEWAY_TIMEOUT` |
+| local         | 👍      | 4.0.0.beta.2 | Prisma@next   | digital ocean (pooling) |                        |
+| Vercel        | ❌      | 4.0.0-beta.2 | Prisma@next   | digital ocean (pooling) | Internal Server Error  |
+| local         | 👍      | 3.29.0       | Prisma@legacy | digital ocean (pooling) |                        |
+| Vercel        | ❌      | 3.29.0       | Prisma@legacy | digital ocean (pooling) | `504: GATEWAY_TIMEOUT` |
+| Digital Ocean | ❌      | 3.29.0       | Prisma@canary | digital ocean (pooling) | `error` |
 
 
 ### NextAuth V3
@@ -31,32 +25,6 @@ npm install pg --save
 npm install @prisma/client @next-auth/prisma-adapter@canary
 npm install prisma --save-dev
 ```
-- [ ] Works Locally
-- [ ] Does not work on Vercel
-- [ ] Witout Prisma Adapter
-- [ ] With Prisma Adapter
-
-### NextAuth V4
-- [ ] Locally
-- [ ] on Vercel
-- [ ] Witout Prisma Adapter
-- [ ] With Prisma Adapter
-
-### Credentials Used
-`.env`
-```bash
-DATABASE_URL="..."
-# ...
-EMAIL_SERVER=smtp://...
-EMAIL_FROM=NextAuth <...@...>
-NEXTAUTH_URL=http://localhost:3000
-SECRET=INp8IvdIyeMcoGAgFGoA61DdBglwwSqnXJZkgz8PSnw
-```
-
-### Database Schemas
-- [V3 Postgres](https://next-auth.js.org/v3/adapters/typeorm/postgres)
-
-#### V3 Prisma
 
 
 <p align="center">
